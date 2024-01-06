@@ -1,0 +1,69 @@
+% arara: lualatex
+% arara: lualatex
+
+\documentclass[12pt, a4paper]{article}
+
+% --------------------------------Settings-------------------------------
+
+% Font
+\usepackage{fontspec}
+\usepackage[T1]{fontenc}
+\setmainfont{Times New Roman}
+
+% Pagination
+\usepackage{geometry}
+\geometry{
+ a4paper,
+ left=20mm,
+ top=20mm,
+ }
+
+\usepackage{fancyhdr}
+
+\usepackage{setspace}
+\onehalfspacing
+\usepackage{microtype}
+
+% Paragraphs Styles
+%     Quotations
+\usepackage{csquotes}
+
+% Language 
+\usepackage[french]{babel}
+
+% Sub Files
+\usepackage{subfiles}
+
+% Table
+\usepackage{array}
+\usepackage{booktabs}
+
+% Transliteration
+\newcommand\translit[1]
+ {\fontspec{FreeSerif}\textit{#1}}
+
+
+\usepackage{newunicodechar}
+
+\newfontfamily\egyptologyfont{Doulos SIL}[Scale=MatchUppercase]
+
+% ꜣ
+\newcommand\ꜣ{{\egyptologyfont\symbol{"A723}}}
+\newunicodechar{^^^^a723}{\ꜣ}
+% ꜥ
+\newcommand\ꜥ{{\egyptologyfont\symbol{"A725}}}
+\newunicodechar{^^^^a725}{\ꜥ}
+
+% Line
+\newcommand\numl[1]
+ {\textsuperscript{(}\textsuperscript{#1}\textsuperscript{)}}
+
+% -------------------------------------------------------------------------
+\begin{document}
+  \fancyhead{}
+  \pagestyle{fancy}
+  \fancyhead[CO,CE]{\textsc{LaTeX File}}
+
+  Hello World!
+
+\end{document}
